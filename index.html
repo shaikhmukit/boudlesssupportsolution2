@@ -21,9 +21,11 @@
         
         /* Navbar & Mobile Menu */
         header { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #eaeaea; }
-        .nav-container { max-width: 1200px; margin: 0 auto; padding: 1.2rem 5%; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: 800; font-size: 1.5rem; letter-spacing: -1px; text-decoration: none; color: var(--dark-bg); }
-        .logo span { color: var(--brand-green); }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; }
+        
+        /* Logo Image Styling */
+        .logo { display: flex; align-items: center; text-decoration: none; }
+        .logo-img { max-height: 55px; width: auto; object-fit: contain; }
         
         .nav-links { display: flex; gap: 2rem; align-items: center; }
         .nav-links a { text-decoration: none; color: var(--text-main); font-weight: 500; transition: color 0.3s; }
@@ -57,8 +59,7 @@
 
         /* Footer */
         footer { background: var(--dark-bg); color: #fff; padding: 4rem 5% 2rem; text-align: center; }
-        .footer-logo { font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem; }
-        .footer-logo span { color: var(--brand-green); }
+        .footer-logo { display: inline-block; margin-bottom: 1rem; background: #fff; padding: 10px 20px; border-radius: 8px; }
         .footer-bottom { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; color: #777; }
 
         /* Responsive Design */
@@ -69,6 +70,7 @@
             .nav-links a { padding: 1.5rem; width: 100%; text-align: center; border-bottom: 1px solid #f0f0f0; }
             .login-btn { border: none; border-radius: 0; }
             .hero { padding: 4rem 5% 6rem; }
+            .logo-img { max-height: 45px; } /* Slightly smaller logo on mobile */
         }
     </style>
 </head>
@@ -76,13 +78,16 @@
 
     <header>
         <div class="nav-container">
-            <a href="#" class="logo">BOUND<span>LESS</span></a>
+            <!-- Updated Logo Implementation -->
+            <a href="#" class="logo">
+                <img src="bound.jpeg" alt="Boundless Support Solutions" class="logo-img">
+            </a>
             <button class="hamburger" onclick="toggleMenu()">☰</button>
             <nav class="nav-links" id="nav-links">
                 <a href="#">Articles</a>
                 <a href="#">Services</a>
                 <a href="#">About</a>
-                
+                <a href="#" class="login-btn">Client Login</a>
             </nav>
         </div>
     </header>
@@ -130,7 +135,10 @@
     </main>
 
     <footer>
-        <div class="footer-logo">BOUND<span>LESS</span></div>
+        <!-- Updated Footer Logo Implementation -->
+        <div class="footer-logo">
+            <img src="bound.jpeg" alt="Boundless Support Solutions" style="max-height: 40px; display: block;">
+        </div>
         <p style="color: #a0a0a0;">Premium Support Solutions</p>
         <div class="footer-bottom">
             &copy; 2026 Boundless Support Solutions. All rights reserved.
